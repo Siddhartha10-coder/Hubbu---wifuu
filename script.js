@@ -1,54 +1,55 @@
-setTimeout(() => {
-    document.getElementById("loading").style.display = "none";
-    document.getElementById("lockscreen").style.display = "block";
-}, 2500);
-let currentPage = 0;
+window.onload = function () {
 
-const pages = document.querySelectorAll(".page");
+    let currentPage = 0;
 
-pages.forEach((page, index) => {
-  if (index !== 0) {
-    page.style.display = "none";
-  }
-});
+    const pages = document.querySelectorAll(".page");
 
-function checkPass() {
-  const pass = document.getElementById("password").value;
-
-  if (pass === "2824") {
+    document.getElementById("loading").style.display = "block";
     document.getElementById("lockscreen").style.display = "none";
-    document.getElementById("book").style.display = "block";
-  } else {
-    document.getElementById("wrong").innerHTML = "❌ Wrong Passcode";
-  }
-}
+    document.getElementById("book").style.display = "none";
 
-function nextPage() {
-  pages[currentPage].style.display = "none";
-  currentPage++;
+    pages.forEach((page,index)=>{
+        page.style.display = index===0 ? "block":"none";
+    });
 
-  if (currentPage < pages.length) {
-    pages[currentPage].style.display = "block";
-  }
-}
-const texts = document.querySelectorAll("p");
+    setTimeout(()=>{
+        document.getElementById("loading").style.display="none";
+        document.getElementById("lockscreen").style.display="block";
+    },2500);
 
-texts.forEach(text => {
-    const original = text.innerHTML;
-    text.innerHTML = "";
+    window.checkPass=function(){
 
-    let i = 0;
+        if(document.getElementById("password").value==="2824"){
 
-    function type() {
-        if (i < original.length) {
-            text.innerHTML += original.charAt(i);
-            i++;
-            setTimeout(type, 25);
+            document.getElementById("lockscreen").style.display="none";
+            document.getElementById("book").style.display="block";
+
+        }else{
+
+            document.getElementById("wrong").innerHTML="❌ Wrong Passcode";
+
         }
+
     }
 
-    type();
-});
-function playMusic(){
-window.open("https://youtu.be/dQw4w9WgXcQ","_blank");
+    window.nextPage=function(){
+
+        pages[currentPage].style.display="none";
+
+        currentPage++;
+
+        if(currentPage<pages.length){
+
+            pages[currentPage].style.display="block";
+
+        }
+
+    }
+
+    window.playMusic=function(){
+
+        window.open("https://youtu.be/dQw4w9WgXcQ","_blank");
+
+    }
+
 }
