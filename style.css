@@ -306,3 +306,50 @@ input{
         transform:translateY(0) scale(1);
     }
 }
+#book{
+    display:none;
+}
+
+.page{
+    display:none;
+    animation:fade .6s ease;
+}
+
+.page:first-child{
+    display:block;
+}
+
+.page img{
+    width:90%;
+    max-width:350px;
+    border-radius:20px;
+    margin:20px auto;
+    display:block;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+button{
+    background:#8b0000;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
