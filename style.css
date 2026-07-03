@@ -243,3 +243,66 @@ border-radius:20px;
 ::-webkit-scrollbar-track{
 background:#3b0000;
 }
+#loading,
+#lockscreen,
+#book{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+#book{
+    display:none;
+}
+
+.page{
+    display:none;
+    width:90%;
+    max-width:420px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:20px;
+    text-align:center;
+    animation:fade .8s ease;
+    box-shadow:0 0 30px rgba(255,255,255,.15);
+}
+
+.page img{
+    width:100%;
+    border-radius:18px;
+    margin:15px 0;
+    box-shadow:0 0 20px rgba(255,255,255,.2);
+}
+
+button{
+    margin-top:20px;
+    background:#b11226;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    font-size:18px;
+}
+
+input{
+    padding:12px;
+    border-radius:12px;
+    border:none;
+    text-align:center;
+    font-size:18px;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
