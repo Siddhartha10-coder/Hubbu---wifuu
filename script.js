@@ -1,3 +1,7 @@
+setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("lockscreen").style.display = "block";
+}, 2500);
 let currentPage = 0;
 
 const pages = document.querySelectorAll(".page");
