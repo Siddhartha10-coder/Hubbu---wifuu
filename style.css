@@ -377,3 +377,17 @@ body{
         transform:translateY(-120vh);
     }
 }
+h1,h2{
+    text-shadow:0 0 10px #fff,
+                0 0 20px #ff4d6d,
+                0 0 35px #ff4d6d;
+}
+
+img:hover{
+    transform:scale(1.03);
+    transition:.4s;
+}
+
+.page{
+    transition:.6s;
+}
