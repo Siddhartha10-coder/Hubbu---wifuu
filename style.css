@@ -353,3 +353,27 @@ button:hover{
         transform:translateY(0);
     }
 }
+body{
+    background:linear-gradient(135deg,#2b0000,#5e001f,#ffffff);
+    overflow:hidden;
+}
+
+.hearts::before{
+    content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+    position:fixed;
+    left:0;
+    bottom:-50px;
+    width:100%;
+    font-size:25px;
+    animation:floatHearts 12s linear infinite;
+    opacity:.5;
+}
+
+@keyframes floatHearts{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
