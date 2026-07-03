@@ -1,34 +1,36 @@
-// ===== Hubbu ❤️ Wifuu =====
+const PASSWORD = "2824";
 
-const loading = document.getElementById("loading");
-const lockscreen = document.getElementById("lockscreen");
-const book = document.getElementById("book");
+let pages = [];
+let currentPage = 0;
 
-setTimeout(() => {
-    loading.style.display = "none";
-    lockscreen.style.display = "flex";
-}, 3000);
+window.onload = function () {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("lockscreen").style.display = "block";
+
+    pages = document.querySelectorAll(".page");
+
+    pages.forEach(page => page.style.display = "none");
+};
 
 function checkPass() {
+    const input = document.getElementById("password").value;
 
-    const pass = document.getElementById("password").value;
+    if (input === PASSWORD) {
+        document.getElementById("lockscreen").style.display = "none";
+        document.getElementById("book").style.display = "block";
 
-    if (pass === "2824") {
-
-        lockscreen.style.display = "none";
-        book.style.display = "block";
-
+        currentPage = 0;
+        pages[0].style.display = "block";
     } else {
-
-        document.getElementById("wrong").innerHTML =
-        "❤️ Wrong Passcode... Try Again Wifuu ❤️";
-
+        document.getElementById("wrong").innerHTML = "❌ Wrong Passcode";
     }
-
 }
 
-function nextPage(){
+function nextPage() {
+    pages[currentPage].style.display = "none";
+    currentPage++;
 
-    alert("🌹 Next Page Coming Soon ❤️");
-
+    if (currentPage < pages.length) {
+        pages[currentPage].style.display = "block";
+    }
 }
