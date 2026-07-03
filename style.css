@@ -391,3 +391,34 @@ img:hover{
 .page{
     transition:.6s;
 }
+.music{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+}
+
+.music button{
+background:#ff004f;
+padding:14px 20px;
+border-radius:40px;
+box-shadow:0 0 20px #ff004f;
+}
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background:
+radial-gradient(circle,#ffffff66 2px,transparent 2px);
+background-size:35px 35px;
+animation:bgMove 10s linear infinite;
+}
+
+@keyframes bgMove{
+from{background-position:0 0;}
+to{background-position:0 500px;}
+}
