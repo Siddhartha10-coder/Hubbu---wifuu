@@ -45,3 +45,6 @@ texts.forEach(text => {
 
     type();
 });
+function playMusic(){
+window.open("https://youtu.be/dQw4w9WgXcQ","_blank");
+}
