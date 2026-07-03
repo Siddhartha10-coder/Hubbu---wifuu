@@ -27,3 +27,21 @@ function nextPage() {
     pages[currentPage].style.display = "block";
   }
 }
+const texts = document.querySelectorAll("p");
+
+texts.forEach(text => {
+    const original = text.innerHTML;
+    text.innerHTML = "";
+
+    let i = 0;
+
+    function type() {
+        if (i < original.length) {
+            text.innerHTML += original.charAt(i);
+            i++;
+            setTimeout(type, 25);
+        }
+    }
+
+    type();
+});
